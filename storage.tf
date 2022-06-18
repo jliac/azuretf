@@ -28,7 +28,7 @@ resource "azurerm_storage_account" "example" {
   account_replication_type = "GRS"
   queue_properties {
     logging {
-      delete                = false
+      delete                = true
       read                  = false
       write                 = true
       version               = "1.0"
