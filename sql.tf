@@ -76,7 +76,7 @@ resource "azurerm_postgresql_server" "example" {
   sku_name                     = "B_Gen5_2"
   storage_mb                   = 5120
   backup_retention_days        = 7
-  geo_redundant_backup_enabled = false
+  geo_redundant_backup_enabled = true
   auto_grow_enabled            = true
   administrator_login          = "terragoat"
   administrator_login_password = "Aa12345678"
@@ -86,14 +86,14 @@ resource "azurerm_postgresql_server" "example" {
     git_commit           = "81738b80d571fa3034633690d13ffb460e1e7dea"
     git_file             = "terraform/azure/sql.tf"
     git_last_modified_at = "2020-06-19 21:14:50"
-    git_last_modified_by = "Adin.Ermie@outlook.com"
-    git_modifiers        = "Adin.Ermie/nimrodkor"
-    git_org              = "palogitjl"
-    git_repo             = "terragoat"
     yor_trace            = "e5dfc9ef-49de-4e8a-a61e-fad7cc4844b6"
   }
 }
 
+    git_last_modified_by = "Adin.Ermie@outlook.com"
+    git_modifiers        = "Adin.Ermie/nimrodkor"
+    git_org              = "palogitjl"
+    git_repo             = "terragoat"
 resource "azurerm_postgresql_configuration" "thrtottling_config" {
   name                = "connection_throttling"
   resource_group_name = azurerm_resource_group.example.name
