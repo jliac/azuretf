@@ -1,4 +1,4 @@
-name: Bridgecrew
+name: Checkov
 on:
   push:
     branches:
@@ -11,9 +11,11 @@ jobs:
         python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
-    - name: Run Bridgecrew 
-      id: Bridgecrew
-      uses: bridgecrewio/bridgecrew-action@main
+    - name: Run Checkov 
+      id: Checkov
+      uses: bridgecrewio/checkov-action@main
+      env:
+        PRISMA_API_URL: https://api.prismacloud.io
       with:
         api-key: ${{ secrets.BC_API_KEY }}
         soft_fail: false
